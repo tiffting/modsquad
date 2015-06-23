@@ -20,18 +20,90 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div class="content">
+        <div id="test-1" class="content">
             <h1 class="section title">
                 Pass the Prude
             </h1>            
             <div class="section instruction left">
                 <p>
-                    <strong>Swipe LEFT</strong> if this photo would make a nun cry:
+                    <strong>Swipe LEFT</strong> if the photo would <strong>make Ned Flanders uncomfortable</strong>:
                 </p>
                 <ul>
                     <li>It has violence, nudity, or other R-rated stuff, or</li>
                     <li>It's mean-spirited</li>
                 </ul>
+            </div>
+            <div class="section instruction right">
+                <p>
+                    Otherwise, <strong>Swipe RIGHT</strong>!
+                </p>
+            </div>
+
+            <p class="action">
+                <a href="">Start</a>
+            </p>
+        </div>
+
+        <div id="test-2" class="content">
+            <h1 class="section title">
+                You're Doing it Wrong
+            </h1>            
+            <div class="section instruction left">
+                <p>
+                    <strong>Swipe LEFT</strong> if the photo <strong>didn't get the assignment</strong>:
+                </p>
+                <ul>
+                    <li>It's not in English (this is 'merica!), or</li>
+                    <li>It has PII (like someone's phone number), or </li>
+                    <li>
+                        It's spam
+                    </li>
+                </ul>
+            </div>
+            <div class="section instruction right">
+                <p>
+                    Otherwise, <strong>Swipe RIGHT</strong>!
+                </p>
+            </div>
+
+            <p class="action">
+                <a href="">Start</a>
+            </p>
+        </div>
+
+        <div id="test-3" class="content">
+            <h1 class="section title">
+                What a jerk!
+            </h1>            
+            <div class="section instruction left">
+                <p>
+                    <strong>Swipe LEFT</strong> if the photo would <strong>was written by a jerk</strong>:
+                </p>
+                <ul>
+                    <li>It has cuss words or whatever,</li>
+                    <li>It's mean-spirited,</li>
+                    <li>It could get YETI in trouble</li>
+                </ul>
+            </div>
+            <div class="section instruction right">
+                <p>
+                    Otherwise, <strong>Swipe RIGHT</strong>!
+                </p>
+            </div>
+
+            <p class="action">
+                <a href="">Start</a>
+            </p>
+        </div>
+
+        <div id="test-4" class="content">
+            <h1 class="section title">
+                Derp
+            </h1>            
+            <div class="section instruction left">
+                <p>
+                    <strong>Swipe LEFT</strong> if the photo would <strong>is missing a YETI product</strong>.
+                </p>
             </div>
             <div class="section instruction right">
                 <p>

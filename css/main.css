@@ -4,14 +4,14 @@ body {padding: .5em; background: black url('background/night-sky.png');}
 	-ms-transform: rotate(-3deg); /* IE 9 */
     -webkit-transform: rotate(-3deg); /* Chrome, Safari, Opera */
     transform: rotate(-3deg);
-    text-shadow: 2px 2px 0 yellow, -2px -2px 0 yellow, 2px -2px 0 yellow, -2px 2px 0 yellow;
+    text-shadow: 2px 2px 0 orchid, -2px -2px 0 orchid, 2px -2px 0 orchid, -2px 2px 0 orchid;
     border: 1px solid black;
     border-radius: 3px;
     box-shadow: 2px 2px 2px black;
 }
 .content {max-width: 35em; margin: 0 auto; background-position: scroll; padding: .5em; border-1px solid black; border-radius: 3px;}
-.section {background-color: darksalmon; padding: .5em; margin-bottom: 1em;}
-.action a { display: block; background-color: black; padding: 2em; width: 4em; text-align: center;border-radius: 50%; margin: 0 auto; color: yellow; font-size: 2em; font-weight: bold; text-decoration: none; text-transform: uppercase;}
+.section {background-color: palegreen; padding: .5em; margin-bottom: 1em;}
+.action a { display: block; background-color: black; padding: 2em; width: 4em; text-align: center;border-radius: 50%; margin: 0 auto; color: orchid; font-size: 2em; font-weight: bold; text-decoration: none; text-transform: uppercase;}
 
 .instruction {position: relative; margin: 1em 3em; padding: .5em; border: 4px double black;}
 .right:after {
@@ -40,13 +40,16 @@ body {padding: .5em; background: black url('background/night-sky.png');}
 .test-1 .content {background: url('background/mixed-tape.png');}
 
 .test-2 .content {background: url('background/dinosaur.png');}
-.test-2 .title {text-shadow: 2px 2px 0 orange, -2px -2px 0 orange, 2px -2px 0 orange, -2px 2px 0 orange;}
-.test-2 .section {background-color: green;}
+.test-2 .title {text-shadow: 2px 2px 0 lawngreen, -2px -2px 0 lawngreen, 2px -2px 0 lawngreen, -2px 2px 0 lawngreen;}
+.test-2 .section {background-color: powderblue;}
+.test-2 .action a {color: lawngreen;}
 
 .test-3 .content {background: url('background/dolphin.png');}
 .test-3 .title {text-shadow: 2px 2px 0 cyan, -2px -2px 0 cyan, 2px -2px 0 cyan, -2px 2px 0 cyan;}
 .test-3 .section {background-color: pink;}
+.test-3 .action a {color: cyan;}
 
 .test-4 .content {background: url('background/nigel.png');}
 .test-4 .title {text-shadow: 2px 2px 0 aquamarine, -2px -2px 0 aquamarine, 2px -2px 0 aquamarine, -2px 2px 0 aquamarine;}
 .test-4 .section {background-color: gold;}
+.test-4 .action a {color: aquamarine;}
