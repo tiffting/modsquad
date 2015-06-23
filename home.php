@@ -18,7 +18,13 @@
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <?php 
-        echo '<body id="home" class="test-' . $test .'">';
+        parse_str($_SERVER['QUERY_STRING']);
+        
+        if (isset($test)){
+            echo '<body id="home" class="test-' . $test .'">';    
+        } else {
+            echo '<body id="home" class="test-1">';
+        }
     ?>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -101,7 +107,7 @@
 
         <div id="test-4" class="content">
             <h1 class="section title">
-                Derp
+                Derp.
             </h1>            
             <div class="section instruction left">
                 <p>
