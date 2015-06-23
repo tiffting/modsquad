@@ -15,7 +15,12 @@
     </head>
     <?php 
         parse_str($_SERVER['QUERY_STRING']);
-        echo '<body class="test-' . $test .'">';
+        
+        if (isset($test)){
+            echo '<body class="test-' . $test .'">';    
+        } else {
+            echo '<body class="test-1">';
+        }
     ?>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -98,7 +103,7 @@
 
         <div id="test-4" class="content">
             <h1 class="section title">
-                Derp
+                Derp.
             </h1>            
             <div class="section instruction left">
                 <p>
