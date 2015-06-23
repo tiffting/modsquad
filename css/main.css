@@ -1,4 +1,4 @@
-body {padding: .5em; background: black url('background/night-sky.png');}
+body {padding: 1em .5em; background: black url('background/night-sky.png');}
 
 .title {
 	-ms-transform: rotate(-3deg); /* IE 9 */
