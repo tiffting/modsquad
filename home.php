@@ -1,3 +1,7 @@
+<?php 
+    parse_str($_SERVER['QUERY_STRING']);
+    setcookie('which_test', $test);
+?>
 <!doctype html>
 <html class="no-js" lang="">
     <head>
@@ -14,8 +18,7 @@
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <?php 
-        parse_str($_SERVER['QUERY_STRING']);
-        echo '<body class="test-' . $test .'">';
+        echo '<body id="home" class="test-' . $test .'">';
     ?>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -40,7 +43,7 @@
             </div>
 
             <p class="action">
-                <a href="">Start</a>
+                <a href="game.php">Start</a>
             </p>
         </div>
 
@@ -67,7 +70,7 @@
             </div>
 
             <p class="action">
-                <a href="">Start</a>
+                <a href="game.php">Start</a>
             </p>
         </div>
 
@@ -92,7 +95,7 @@
             </div>
 
             <p class="action">
-                <a href="">Start</a>
+                <a href="game.php">Start</a>
             </p>
         </div>
 
@@ -112,7 +115,7 @@
             </div>
 
             <p class="action">
-                <a href="">Start</a>
+                <a href="game.php">Start</a>
             </p>
         </div>
 
