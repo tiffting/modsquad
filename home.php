@@ -19,7 +19,6 @@
     </head>
     <?php 
         parse_str($_SERVER['QUERY_STRING']);
-        
         if (isset($test)){
             echo '<body id="home" class="test-' . $test .'">';    
         } else {

@@ -21,7 +21,7 @@ body {padding: .5em; background: black url('background/night-sky.png');}
 	height: 0; 
 	border-top: 1.5em solid transparent;
 	border-bottom: 1.5em solid transparent;
-	border-left: 1.5em solid black;
+	border-left: 1.5em solid palegreen;
 	position: absolute;
 	top: 0;
 	right: -1.5em;
@@ -32,7 +32,7 @@ body {padding: .5em; background: black url('background/night-sky.png');}
 	height: 0; 
 	border-top: 1.5em solid transparent;
 	border-bottom: 1.5em solid transparent; 
-	border-right: 1.5em solid black; 
+	border-right: 1.5em solid palegreen; 
 	position: absolute;
 	top: 0;
 	left: -1.5em;
@@ -44,13 +44,19 @@ body {padding: .5em; background: black url('background/night-sky.png');}
 .test-2 .title {text-shadow: 2px 2px 0 lawngreen, -2px -2px 0 lawngreen, 2px -2px 0 lawngreen, -2px 2px 0 lawngreen;}
 .test-2 .section {background-color: powderblue;}
 .test-2 .action a {color: lawngreen;}
+.test-2 .right:after {border-left-color: powderblue;}
+.test-2 .left:before {border-right-color: powderblue;}
 
 .test-3 .content {background: url('background/dolphin.png');}
 .test-3 .title {text-shadow: 2px 2px 0 cyan, -2px -2px 0 cyan, 2px -2px 0 cyan, -2px 2px 0 cyan;}
 .test-3 .section {background-color: pink;}
 .test-3 .action a {color: cyan;}
+.test-3 .right:after {border-left-color: pink;}
+.test-3 .left:before {border-right-color: pink;}
 
 .test-4 .content {background: url('background/nigel.png');}
 .test-4 .title {text-shadow: 2px 2px 0 aquamarine, -2px -2px 0 aquamarine, 2px -2px 0 aquamarine, -2px 2px 0 aquamarine;}
 .test-4 .section {background-color: gold;}
 .test-4 .action a {color: aquamarine;}
+.test-4 .right:after {border-left-color: gold;}
+.test-4 .left:before {border-right-color: gold;}
