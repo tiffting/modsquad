@@ -13,7 +13,10 @@
         <link rel="stylesheet" href="css/h5bp-2.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
-    <body class="test-1">
+    <?php 
+        parse_str($_SERVER['QUERY_STRING']);
+        echo '<body class="test-' . $test .'">';
+    ?>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
