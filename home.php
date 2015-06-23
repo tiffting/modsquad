@@ -1,13 +1,13 @@
 <?php 
     parse_str($_SERVER['QUERY_STRING']);
-    setcookie('which_test', $test);
+    setcookie('which_test', $startTest);
 ?>
 <!doctype html>
 <html class="no-js" lang="">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Let's play a game!</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -19,8 +19,8 @@
     </head>
     <?php 
         parse_str($_SERVER['QUERY_STRING']);
-        if (isset($test)){
-            echo '<body id="home" class="test-' . $test .'">';    
+        if (isset($startTest)){
+            echo '<body id="home" class="test-' . $startTest .'">';    
         } else {
             echo '<body id="home" class="test-1">';
         }
