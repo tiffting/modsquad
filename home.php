@@ -58,14 +58,12 @@
             </h1>            
             <div class="section instruction left">
                 <p>
-                    <strong>Swipe LEFT</strong> if the photo <strong>didn't get the assignment</strong>:
+                    <strong>Swipe LEFT</strong> if the caption or nickname <strong>didn't get the assignment</strong>:
                 </p>
                 <ul>
-                    <li>It's not in English (this is 'merica!), or</li>
+                    <li>It's not in English (this is 'merica!),</li>
                     <li>It has PII (like someone's phone number), or </li>
-                    <li>
-                        It's spam
-                    </li>
+                    <li>It's spam</li>
                 </ul>
             </div>
             <div class="section instruction right">
@@ -85,11 +83,10 @@
             </h1>            
             <div class="section instruction left">
                 <p>
-                    <strong>Swipe LEFT</strong> if the photo would <strong>was written by a jerk</strong>:
+                    <strong>Swipe LEFT</strong> if the photo <strong>was taken by a jerk</strong>:
                 </p>
                 <ul>
-                    <li>It has cuss words or whatever,</li>
-                    <li>It's mean-spirited,</li>
+                    <li>It has obscene gestures or whatever, or</li>
                     <li>It could get YETI in trouble</li>
                 </ul>
             </div>
@@ -110,7 +107,7 @@
             </h1>            
             <div class="section instruction left">
                 <p>
-                    <strong>Swipe LEFT</strong> if the photo would <strong>is missing a YETI product</strong>.
+                    <strong>Swipe LEFT</strong> if the photo <strong>is missing a YETI product</strong>.
                 </p>
             </div>
             <div class="section instruction right">
