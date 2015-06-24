@@ -128,6 +128,9 @@ h2.section {margin: 0 0 .5em; padding: 0 .5em; font-size: 1em;}
 		left: -2.5em;
 }
 
+.score {text-align: center;}
+.score strong.number {font-size: 3em;}
+
 @media only screen and (min-width: 35em) {
     body {padding-top: 4em;}
     .instruction {margin: 1em 3em;}
