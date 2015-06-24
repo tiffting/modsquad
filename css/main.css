@@ -1,5 +1,8 @@
 body {padding: .5em; background: black url('background/night-sky.png');}
+img {max-width: 100%;}
+ol {margin: 0; padding: 0; list-style-type: none;}
 
+.inside {padding: .5em;}
 .title {
 	-ms-transform: rotate(-2deg); /* IE 9 */
   -webkit-transform: rotate(-2deg); /* Chrome, Safari, Opera */
@@ -12,12 +15,31 @@ body {padding: .5em; background: black url('background/night-sky.png');}
   position: relative;
   top: -9px;
 }
-.content {max-width: 35em; margin: 0 auto; background-position: scroll; padding: .5em; border-1px solid black; border-radius: 3px;}
+.content, .results { margin: 0 auto; background: lightsteelblue scroll; padding: .5em; border-1px solid black; border-radius: 3px;}
+.content {max-width: 35em;}
+.results {max-width: 60em;}
+figure {margin: 0;}
+figcaption {font-size: .8em;}
+.col {float: left;}
+.col-narrow {width: 50%;}
+.col-wide {width: 50%}
+h2.rejected {color: orangered;}
+h2.approved {color: cadetblue;}
+.bar {position: relative; max-width: 30em; height: 2em; margin-bottom: 1em;}
+.bar div {border: 1px solid lightsteelblue; position: absolute; height: 2em; background-color: aliceblue; width: 100%;}
+.rejected .percentage {background-color: orangered; border-color: orangered;}
+.approved .percentage {background-color: cadetblue; border-color: cadetblue;}
+
+.tally {text-align: center;}
+.tally li {display: inline-block; width: 5em; padding: 1em; margin: 1em; background-color: aliceblue; border: 1px solid lightsteelblue; border-radius: .5em;}
+.tally h2 {margin: 0; font-size: 4em;}
+.tally small {text-transform: uppercase;}
+
 #home .content,
 #thanks .content {
   display: none;
 }
-.section {background-color: palegreen; padding: .5em; margin-bottom: .75em;}
+.section {background-color: white; padding: .5em; margin-bottom: 1px;}
 h2.section {margin: 0 0 .5em; padding: 0 .5em; font-size: 1em;}
 .action a { display: block; background-color: black; padding: 1em; width: 4em; text-align: center;border-radius: 50%; margin: 0 auto; color: orchid; font-size: 2em; font-weight: bold; text-decoration: none; text-transform: uppercase;}
 
@@ -48,6 +70,7 @@ h2.section {margin: 0 0 .5em; padding: 0 .5em; font-size: 1em;}
 }
 
 .test-1 .content {background: url('background/mixed-tape.png');}
+.test-1 .section {background-color: palegreen;}
 
 .test-2 .content {background: url('background/dinosaur.png');}
 .test-2 .title {text-shadow: 2px 2px 0 lawngreen, -2px -2px 0 lawngreen, 2px -2px 0 lawngreen, -2px 2px 0 lawngreen;}
@@ -108,4 +131,7 @@ h2.section {margin: 0 0 .5em; padding: 0 .5em; font-size: 1em;}
 @media only screen and (min-width: 35em) {
     body {padding-top: 4em;}
     .instruction {margin: 1em 3em;}
+    .col-narrow {width: 40%;}
+	.col-wide {width: 60%}
+	.inside {padding: 1em;}
 }

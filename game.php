@@ -52,8 +52,8 @@
                             }
                             else {
                                 echo '
-                                        <div class="main-slide text">
-                                            <p id="'.$p[id].'">'.$p[comment].'<br/>by <strong>'.$p[nickname].'</strong></p>
+                                        <div class="main-slide text">                                            
+                                            <p id="'.$p[id].'">'.$p[comment].'<br /><br />by <strong>'.$p[nickname].'</strong></p>
                                         </div>
                                 ';
                             }
