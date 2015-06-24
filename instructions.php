@@ -42,8 +42,13 @@ EOD;
 $left4 = <<<EOD
 <div class="section instruction left">
                 <p>
-                    <strong>Swipe LEFT</strong> if the photo <strong>is missing a YETI product</strong>.
+                    <strong>Swipe LEFT</strong> if there's no YETI</strong>.
                 </p>
+                <ul>
+                    <li>Photo's nice, but there's no YETI product, or
+                    </li>
+                    <li>You wouldn't know because the photo's a blurry mess!</li>
+                </ul>
             </div>
 EOD;
 

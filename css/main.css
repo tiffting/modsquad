@@ -19,9 +19,9 @@ body {padding: .5em; background: black url('background/night-sky.png');}
 }
 .section {background-color: palegreen; padding: .5em; margin-bottom: .75em;}
 h2.section {margin: 0 0 .5em; padding: 0 .5em; font-size: 1em;}
-.action a { display: block; background-color: black; padding: 2em; width: 4em; text-align: center;border-radius: 50%; margin: 0 auto; color: orchid; font-size: 2em; font-weight: bold; text-decoration: none; text-transform: uppercase;}
+.action a { display: block; background-color: black; padding: 1em; width: 4em; text-align: center;border-radius: 50%; margin: 0 auto; color: orchid; font-size: 2em; font-weight: bold; text-decoration: none; text-transform: uppercase;}
 
-.instruction {position: relative; margin: 1em 3em; padding: .5em; border: 4px double black;}
+.instruction {position: relative; margin: .5em; padding: .5em; border: 4px double black;}
 .instruction p:first-child {margin-top: 0;}
 .instruction p:last-child {margin-bottom: 0;}
 .right:after {
@@ -76,7 +76,7 @@ h2.section {margin: 0 0 .5em; padding: 0 .5em; font-size: 1em;}
 .text {
   background-color: white;
 }
-.text p {padding: 5em 1em; text-align: left;}
+.text p {padding: 6em 2.5em; text-align: left;}
 
 .slick-slider {margin-bottom: 0;}
 .carousel img {max-width: 95%; margin: 5px auto;}
@@ -103,4 +103,9 @@ h2.section {margin: 0 0 .5em; padding: 0 .5em; font-size: 1em;}
 .slick-next {
 		background-image: url('background/little-BOO.png');
 		left: -2.5em;
+}
+
+@media only screen and (min-width: 35em) {
+    body {padding-top: 4em;}
+    .instruction {margin: 1em 3em;}
 }
