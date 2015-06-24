@@ -70,12 +70,14 @@
             }
             var carouselIdStr = $(this).attr('id');
             var carouselIdInt = parseInt(carouselIdStr.substring(carouselIdStr.length - 1));
-            if (carouselIdInt <= 5) {
+            console.log(carouselIdInt);
+            if (carouselIdInt < 5) {
                 $('#carousel-' + carouselIdInt).hide();
                 $('#carousel-' + (carouselIdInt + 1)).show();
             }
             else {
                 // TODO: show thank you page
+                document.location = 'thanks.php';
             }
           });
         });

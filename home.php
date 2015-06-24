@@ -1,6 +1,6 @@
 <?php 
     parse_str($_SERVER['QUERY_STRING']);
-    setcookie('which_test', $startTest);
+    setcookie('which_test', $test);
 ?>
 <!doctype html>
 <html class="no-js" lang="">
@@ -19,8 +19,8 @@
     </head>
     <?php 
         parse_str($_SERVER['QUERY_STRING']);
-        if (isset($startTest)){
-            echo '<body id="home" class="test-' . $startTest .'">';    
+        if (isset($test)){
+            echo '<body id="home" class="test-' . $test .'">';    
         } else {
             echo '<body id="home" class="test-1">';
         }
