@@ -5,14 +5,16 @@
         $test = '1';
     }
     setcookie('which_test', $test);
-    // If no previous photo group, start with photo group a
-    $currentGroup = $_COOKIE["which_group"];
-    if (!isset($currentGroup)) {
+    // If no previous photo group done, start with photo group a
+    $groupsDone = $_COOKIE['groups_done'];
+    if (!isset($groupsDone)) {
         setcookie('which_group', 'a');
     }
     else {
-        $currentGroup++;
-        setcookie('which_group', $currentGroup);
+        $length = strlen($groupsDone);
+        $lastChar = substr($groupsDone, ($length - 1));
+        $currentGroup = substr($groupsDone, (strlen($groupsDone) - 1));
+        setcookie('which_group', ++$currentGroup);
     }
 ?>
 <!doctype html>

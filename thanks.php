@@ -1,6 +1,8 @@
 <?php
-    $currentTest = $_COOKIE["which_test"];
-    $testsDone = $_COOKIE["tests_done"];
+    $currentTest = $_COOKIE['which_test'];
+    $testsDone = $_COOKIE['tests_done'];
+    $currentGroup = $_COOKIE['which_group'];
+    $groupsDone = $_COOKIE['groups_done'];
     $totalTests = 4; // should match the number of tests
     $nextTest = ($currentTest % $totalTests) + 1;
     $allDone = false;
@@ -11,13 +13,16 @@
     else {
         setcookie('tests_done', $testsDone.','.$currentTest);
     }
-    // NOTE: Not sure why, but even reading the tests_done cookie again below
-    // results in the initial value, not the updated value with $currentTest.
-    // e.g., if updated value = 1,2,3,4 (conditional above)
-    //       then read value  = 1,2,3 (line below)
-    $testsDone = $_COOKIE["tests_done"];
+    // Update list of groups done
+    if (!isset($groupsDone)) {
+        setcookie('groups_done', $currentGroup);
+    }
+    else {
+        setcookie('groups_done', $groupsDone.','.$currentGroup);
+    }
     // Show another test, or go to the end?
-    if (strlen($testsDone) < $totalTests) {
+    $maxLenTestsDone = (($totalTests - 1) * 2) - 1;
+    if (strlen($testsDone) < $maxLenTestsDone) {
         setcookie('which_test', $nextTest);
     }
     else {
