@@ -16,6 +16,8 @@
         $currentGroup = substr($groupsDone, (strlen($groupsDone) - 1));
         setcookie('which_group', ++$currentGroup);
     }
+
+    $titles = array('Pass the Prude', 'You\'re Doing it Wrong', 'What a Jerk!', 'Derp.');
 ?>
 <!doctype html>
 <html class="no-js" lang="">
@@ -40,7 +42,7 @@
         <![endif]-->
         <div id="test-1" class="content">
             <h1 class="section title">
-                Pass the Prude
+                <?php echo $titles[$test-1]; ?>
             </h1>            
             <div class="section instruction left">
                 <p>
@@ -64,11 +66,11 @@
 
         <div id="test-2" class="content">
             <h1 class="section title">
-                You're Doing it Wrong
+                <?php echo $titles[$test-1]; ?>
             </h1>            
             <div class="section instruction left">
                 <p>
-                    <strong>Swipe LEFT</strong> if the caption or nickname <strong>didn't get the assignment</strong>:
+                    <strong>Swipe LEFT</strong> if the contributor <strong>didn't get the assignment</strong>:
                 </p>
                 <ul>
                     <li>It's not in English (this is 'merica!),</li>
@@ -89,7 +91,7 @@
 
         <div id="test-3" class="content">
             <h1 class="section title">
-                What a jerk!
+                <?php echo $titles[$test-1]; ?>
             </h1>            
             <div class="section instruction left">
                 <p>
@@ -113,7 +115,7 @@
 
         <div id="test-4" class="content">
             <h1 class="section title">
-                Derp.
+                <?php echo $titles[$test-1]; ?>
             </h1>            
             <div class="section instruction left">
                 <p>

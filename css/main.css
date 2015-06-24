@@ -15,6 +15,7 @@ body {padding: 1em .5em; background: black url('background/night-sky.png');}
   display: none;
 }
 .section {background-color: palegreen; padding: .5em; margin-bottom: 1em;}
+h2.section {margin: 0 0 .5em; padding: 0 .5em; font-size: 1em;}
 .action a { display: block; background-color: black; padding: 2em; width: 4em; text-align: center;border-radius: 50%; margin: 0 auto; color: orchid; font-size: 2em; font-weight: bold; text-decoration: none; text-transform: uppercase;}
 
 .instruction {position: relative; margin: 1em 3em; padding: .5em; border: 4px double black;}
@@ -74,3 +75,6 @@ body {padding: 1em .5em; background: black url('background/night-sky.png');}
 .text p {
   max-width: 94%;
 }
+
+.carousel {max-width: 90%; margin: 0 auto;}
+.carousel img, .carousel .text {width: 100%;}
