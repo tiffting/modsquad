@@ -61,10 +61,6 @@ body {padding: 1em .5em; background: black url('background/night-sky.png');}
 .test-4 .right:after {border-left-color: gold;}
 .test-4 .left:before {border-right-color: gold;}
 
-#game .content {
-  padding: 2em 0;
-  text-align: center;
-}
-.photo {
-  max-width: 500px;
+.carousel {
+  display: none;
 }
