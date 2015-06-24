@@ -35,7 +35,20 @@
                             <div class="carousel-and-form">
                                 <div id="carousel-'.$p[id].'" class="carousel">
                                     <div>reject</div>
+                        ';
+                        if ($startTest !== '2') {
+                            echo '
                                     <div class="photo"><img src="data/photos/'.$p[src].'" id="'.$p[id].'"/></div>
+                            ';
+                        }
+                        else {
+                            echo '
+                                    <div class="text">
+                                        <p id="'.$p[id].'">'.$p[comment].'<br/>by <strong>'.$p[nickname].'</strong></p>
+                                    </div>
+                            ';
+                        }
+                        echo '
                                     <div>approve</div>
                                 </div>
                                 <form id="form-'.$p[id].'">

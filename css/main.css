@@ -67,3 +67,10 @@ body {padding: 1em .5em; background: black url('background/night-sky.png');}
 .carousel {
   display: none;
 }
+.text {
+  background-color: white;
+  padding: 1em;
+}
+.text p {
+  max-width: 94%;
+}
