@@ -62,9 +62,9 @@
                                         <div class="preloader reject"><img src="resources/img/BOO.png" alt="" /></div>
                                     </div>
                                     <form id="form-'.$p[id].'">
-                                        <input type="hidden" name="photo-id" value="'.$p[id].'"/>
-                                        <input type="hidden" name="photo-group" value="'.$p[group].'"/>
-                                        <input type="hidden" name="test-id" value="'.$test.'"/>
+                                        <input type="hidden" name="photoId" value="'.$p[id].'"/>
+                                        <input type="hidden" name="photoGroup" value="'.$p[group].'"/>
+                                        <input type="hidden" name="testId" value="'.$test.'"/>
                                         <input type="hidden" name="approved" value=""/>
                                     </form>
                                 </div>
