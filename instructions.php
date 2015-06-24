@@ -22,7 +22,7 @@ EOD;
                 <ul>
                     <li>It's not in English (this is 'merica!),</li>
                     <li>It has PII (like someone's phone number), or </li>
-                    <li>It's spam</li>
+                    <li>There's cuss words in there</li>
                 </ul>
             </div>
 EOD;
@@ -35,6 +35,7 @@ $left3 = <<<EOD
                 <ul>
                     <li>It has obscene gestures or whatever, or</li>
                     <li>It could get YETI in trouble</li>
+                    <li>The jerk just uploaded an ad (SPAM!)</li>
                 </ul>
             </div>
 EOD;
