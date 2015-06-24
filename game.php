@@ -47,12 +47,12 @@
                             ';
                             if ($test !== '2') {
                                 echo '
-                                        <div class="photo"><img src="data/photos/'.$p[src].'" id="'.$p[id].'"/></div>
+                                        <div class="main-slide photo"><img src="data/photos/'.$p[src].'" id="'.$p[id].'"/></div>
                                 ';
                             }
                             else {
                                 echo '
-                                        <div class="text">
+                                        <div class="main-slide text">
                                             <p id="'.$p[id].'">'.$p[comment].'<br/>by <strong>'.$p[nickname].'</strong></p>
                                         </div>
                                 ';
@@ -122,10 +122,10 @@
                 var preloader = function() {
                     $('#carousel-' + carouselIdInt).hide();
                     iniSlick('#carousel-' + (carouselIdInt + 1));
-                    preloader.clearTimeout();
+                    clearTimeout(muffin);
                 }
 
-                setTimeout(preloader, 2000);
+                var muffin = setTimeout(preloader, 1000);
 
 
             }
@@ -139,7 +139,10 @@
                 $(carousel).show();
                 $(carousel).slick({
                     initialSlide: 1
-                });                
+                }); 
+
+                // make the approve / reject slides the same height
+                $(carousel).find('.preloader').height(  $(carousel).find('.main-slide').height()  );
             }
         });
         </script>
