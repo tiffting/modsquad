@@ -21,6 +21,7 @@
     </head>
     <?php
         $startTest = $_COOKIE["which_test"];
+        $group = $_COOKIE["which_group"];
         echo '<body id="game" class="test-' . $startTest .'">';
     ?>
         <!--[if lt IE 8]>
@@ -28,9 +29,9 @@
         <![endif]-->
         <div class="content">
             <?php
-                echo '<div class="group-a">';
+                echo '<div class="group-'.$group.'">';
                 foreach($json[photo] as $p) {
-                    if($p[group] === 'a') {
+                    if($p[group] === $group) {
                         echo '
                             <div class="carousel-and-form">
                                 <div id="carousel-'.$p[id].'" class="carousel">

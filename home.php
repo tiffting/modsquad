@@ -1,6 +1,19 @@
 <?php 
     parse_str($_SERVER['QUERY_STRING']);
+    // Hardcode the starting test if no test is specified in the URL
+    if (!isset($test)) {
+        $test = '1';
+    }
     setcookie('which_test', $test);
+    // If no previous photo group, start with photo group a
+    $currentGroup = $_COOKIE["which_group"];
+    if (!isset($currentGroup)) {
+        setcookie('which_group', 'a');
+    }
+    else {
+        $currentGroup++;
+        setcookie('which_group', $currentGroup);
+    }
 ?>
 <!doctype html>
 <html class="no-js" lang="">
@@ -18,12 +31,7 @@
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <?php 
-        parse_str($_SERVER['QUERY_STRING']);
-        if (isset($test)){
-            echo '<body id="home" class="test-' . $test .'">';    
-        } else {
-            echo '<body id="home" class="test-1">';
-        }
+        echo '<body id="home" class="test-' . $test .'">';    
     ?>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
