@@ -36,3 +36,6 @@
 ehthumbs.db
 Thumbs.db
 
+# App specific files #
+##########################
+modResponses.js
