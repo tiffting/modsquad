@@ -1,30 +1,35 @@
-body {padding: 1em .5em; background: black url('background/night-sky.png');}
+body {padding: .5em; background: black url('background/night-sky.png');}
 
 .title {
-	-ms-transform: rotate(-3deg); /* IE 9 */
-    -webkit-transform: rotate(-3deg); /* Chrome, Safari, Opera */
-    transform: rotate(-3deg);
-    text-shadow: 2px 2px 0 orchid, -2px -2px 0 orchid, 2px -2px 0 orchid, -2px 2px 0 orchid;
-    border: 1px solid black;
-    border-radius: 3px;
-    box-shadow: 2px 2px 2px black;
+	-ms-transform: rotate(-2deg); /* IE 9 */
+  -webkit-transform: rotate(-2deg); /* Chrome, Safari, Opera */
+  transform: rotate(-2deg);
+  text-shadow: 2px 2px 0 orchid, -2px -2px 0 orchid, 2px -2px 0 orchid, -2px 2px 0 orchid;
+  border: 1px solid black;
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px black;
+  font-size: 1.5em;
+  position: relative;
+  top: -9px;
 }
 .content {max-width: 35em; margin: 0 auto; background-position: scroll; padding: .5em; border-1px solid black; border-radius: 3px;}
 #home .content,
 #thanks .content {
   display: none;
 }
-.section {background-color: palegreen; padding: .5em; margin-bottom: 1em;}
+.section {background-color: palegreen; padding: .5em; margin-bottom: .75em;}
 h2.section {margin: 0 0 .5em; padding: 0 .5em; font-size: 1em;}
 .action a { display: block; background-color: black; padding: 2em; width: 4em; text-align: center;border-radius: 50%; margin: 0 auto; color: orchid; font-size: 2em; font-weight: bold; text-decoration: none; text-transform: uppercase;}
 
 .instruction {position: relative; margin: 1em 3em; padding: .5em; border: 4px double black;}
+.instruction p:first-child {margin-top: 0;}
+.instruction p:last-child {margin-bottom: 0;}
 .right:after {
 	content: ' ';
 	width: 0; 
 	height: 0; 
-	border-top: 1.5em solid transparent;
-	border-bottom: 1.5em solid transparent;
+	border-top: 1.25em solid transparent;
+	border-bottom: 1.25em solid transparent;
 	border-left: 1.5em solid palegreen;
 	position: absolute;
 	top: 0;
@@ -34,8 +39,8 @@ h2.section {margin: 0 0 .5em; padding: 0 .5em; font-size: 1em;}
 	content: ' ';
 	width: 0; 
 	height: 0; 
-	border-top: 1.5em solid transparent;
-	border-bottom: 1.5em solid transparent; 
+	border-top: 1.25em solid transparent;
+	border-bottom: 1.25em solid transparent; 
 	border-right: 1.5em solid palegreen; 
 	position: absolute;
 	top: 0;
