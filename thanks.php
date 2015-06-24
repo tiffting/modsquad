@@ -52,7 +52,7 @@
 
             <p class="action">
                 <?php
-                    if ($allDone == true) {
+                    if ($allDone === TRUE) {
                         echo '<a>Thanks so much!</a>';
                     }
                     else {
@@ -74,7 +74,7 @@
 
             <p class="action">
                 <?php
-                    if ($allDone == true) {
+                    if ($allDone === TRUE) {
                         echo '<a>Thanks so much!</a>';
                     }
                     else {
@@ -96,7 +96,7 @@
 
             <p class="action">
                 <?php
-                    if ($allDone == true) {
+                    if ($allDone === TRUE) {
                         echo '<a>Thanks so much!</a>';
                     }
                     else {
@@ -118,7 +118,7 @@
 
             <p class="action">
                 <?php
-                    if ($allDone == true) {
+                    if ($allDone === TRUE) {
                         echo '<a>Thanks so much!</a>';
                     }
                     else {

@@ -30,12 +30,20 @@
             <?php
                 echo '<div class="group-a">';
                 foreach($json[photo] as $p) {
-                    if($p[group] == 'a') {
+                    if($p[group] === 'a') {
                         echo '
-                            <div id="carousel-'.$p[id].'" class="carousel">
-                                <div>reject</div>
-                                <div class="photo"><img src="data/photos/'.$p[src].'" id="'.$p[id].'"/></div>
-                                <div>approve</div>
+                            <div class="carousel-and-form">
+                                <div id="carousel-'.$p[id].'" class="carousel">
+                                    <div>reject</div>
+                                    <div class="photo"><img src="data/photos/'.$p[src].'" id="'.$p[id].'"/></div>
+                                    <div>approve</div>
+                                </div>
+                                <form id="form-'.$p[id].'">
+                                    <input type="hidden" name="photo-id" value="'.$p[id].'"/>
+                                    <input type="hidden" name="photo-group" value="'.$p[group].'"/>
+                                    <input type="hidden" name="test-id" value="'.$startTest.'"/>
+                                    <input type="hidden" name="approved" value=""/>
+                                </form>
                             </div>
                         ';
                     }
@@ -46,6 +54,7 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+        <script src="js/vendor/jquery.serializejson.js"></script>
         <?php
             // tiff TODO: Change this to slick.min.js
         ?>
@@ -60,23 +69,35 @@
           // Show first carousel
           $('#carousel-1').show();
           $('.carousel').on('swipe', function(event, slick, direction) {
+            // Rejected
             if (direction === 'left') {
-                // TODO: write a rejection
-                console.log(direction);
+                $(this).siblings('form').find('input[name="approved"]').val('false');
             }
+            // Approved
             else if (direction === 'right') {
-                // TODO: write an approval
-                console.log(direction);
+                $(this).siblings('form').find('input[name="approved"]').val('true');
             }
             var carouselIdStr = $(this).attr('id');
             var carouselIdInt = parseInt(carouselIdStr.substring(carouselIdStr.length - 1));
-            console.log(carouselIdInt);
+            console.log(direction + ', ' + carouselIdInt);
+            // Update moderation status
+            var formIdStr = '#form-' + carouselIdInt;
+            var jsonText = JSON.stringify($(formIdStr).serializeJSON());
+            console.log(jsonText);
+            var json = {'data': jsonText};
+            console.log(json);
+            $.ajax({
+                url: "writejson.php",
+                type: "POST",
+                data: json
+            });
+
+            // Hide last photo carousel, show next photo carousel
             if (carouselIdInt < 5) {
                 $('#carousel-' + carouselIdInt).hide();
                 $('#carousel-' + (carouselIdInt + 1)).show();
             }
             else {
-                // TODO: show thank you page
                 document.location = 'thanks.php';
             }
           });

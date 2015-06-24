@@ -36,7 +36,3 @@
 ehthumbs.db
 Thumbs.db
 
-# Sencha generated files #
-##########################
-.sencha
-build
