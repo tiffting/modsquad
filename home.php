@@ -7,8 +7,11 @@
     setcookie('which_test', $test);
     // If no previous photo group done, start with photo group a
     $groupsDone = $_COOKIE['groups_done'];
-    if (!isset($groupsDone)) {
+    $group = $_COOKIE["which_group"];
+    if (!isset($groupsDone) || $group == '4') {
         setcookie('which_group', '1');
+        setcookie('groups_done', '');
+        setcookie('tests_done', '');
     }
     else {
         $currentGroup = substr($groupsDone, -1);
@@ -22,7 +25,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Let's play a game!</title>
+        <title>Let's play!</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -33,7 +36,7 @@
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <?php 
-        echo '<body id="home" class="test-' . $test .'">';    
+        echo '<body id="home" class="test-' . $test .'">';   
     ?>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
