@@ -13,7 +13,7 @@
         exit;
       }
       else {
-        fwrite($handle, ",\n");
+        fwrite($handle, ",");
       }
     }
     echo 'Success! Wrote ($jsonData) to file ($modResponses).';
