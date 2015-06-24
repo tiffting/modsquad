@@ -123,14 +123,15 @@
                 iniSlick('#carousel-' + (carouselIdInt + 1));
                 clearTimeout(muffin);
               }
-              var muffin = setTimeout(preloader, 1000);
+              var muffin = setTimeout(preloader, 500);
             }
             else {
                 var thankyou = function(){
                     document.location = 'thanks.php';
                     clearTimeout(cupcake);
                 }
-                var cupcake = setTimeout(thankyou, 1000);
+
+                var cupcake = setTimeout(thankyou, 500);
             }
 
             $(window).resize(function(){
