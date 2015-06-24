@@ -65,16 +65,19 @@ h2.section {margin: 0 0 .5em; padding: 0 .5em; font-size: 1em;}
 .test-4 .right:after {border-left-color: gold;}
 .test-4 .left:before {border-right-color: gold;}
 
-.carousel {
+.carousel-and-form .carousel {
   display: none;
 }
 .text {
   background-color: white;
-  padding: 1em;
 }
-.text p {
-  max-width: 94%;
-}
+.text p {padding: 1em;}
 
-.carousel {max-width: 90%; margin: 0 auto;}
-.carousel img, .carousel .text {width: 100%;}
+.slick-slider {margin-bottom: 0;}
+.carousel img {max-width: 95%; margin: 5px auto;}
+.carousel .photo img {box-shadow: 0 0 5px black;}
+
+.preloader img {visibility: hidden;}
+.preloader {background-position: center; background-size: 10em; background-repeat: no-repeat;}
+.approve {background-image: url('background/OK.png');}
+.reject {background-image: url('background/BOO.png');}

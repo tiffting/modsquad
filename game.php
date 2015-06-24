@@ -14,17 +14,18 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/h5bp-1.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/h5bp-2.css">
+        
         <link rel="stylesheet" href="css/slick.css">
         <link rel="stylesheet" href="css/slick-theme.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/h5bp-2.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
 
     <?php
         $test = $_COOKIE["which_test"];
         $group = $_COOKIE["which_group"];
-        echo '<body id="game" class="test-' . $startTest .'">';
+        echo '<body id="game" class="test-' . $test .'">';
     ?>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -42,7 +43,7 @@
                             echo '
                                 <div class="carousel-and-form">
                                     <div id="carousel-'.$p[id].'" class="carousel">
-                                        <div>reject</div>
+                                        <div class="preloader reject"><img src="resources/img/BOO.png" alt="" /></div>
                             ';
                             if ($test !== '2') {
                                 echo '
@@ -57,7 +58,7 @@
                                 ';
                             }
                             echo '
-                                        <div>approve</div>
+                                        <div class="preloader approve"><img src="resources/img/OK.png" alt="" /></div>
                                     </div>
                                     <form id="form-'.$p[id].'">
                                         <input type="hidden" name="photo-id" value="'.$p[id].'"/>
@@ -65,7 +66,7 @@
                                         <input type="hidden" name="test-id" value="'.$test.'"/>
                                         <input type="hidden" name="approved" value=""/>
                                     </form>
-                                
+                                </div>
                             ';
                         }
                     }
@@ -86,30 +87,26 @@
         <script src="js/main.js"></script>
         <script>
         $(document).ready(function(){
-          $('.carousel').slick({
-            initialSlide: 1
-          });
-          // Show first carousel
-          $('.carousel').hide();
-          $('#carousel-1').show();
-          $('.carousel').on('afterChange', function(event, slick, direction) {
+          iniSlick('#carousel-1');
+          $('.carousel').on('afterChange', function(event, slick, currentSlide) {
+
             // Rejected
-            if (direction === 'left') {
+            if (currentSlide === 0) {
                 $(this).siblings('form').find('input[name="approved"]').val('false');
             }
             // Approved
-            else if (direction === 'right') {
+            else if (currentSlide === 2) {
                 $(this).siblings('form').find('input[name="approved"]').val('true');
             }
             var carouselIdStr = $(this).attr('id');
             var carouselIdInt = parseInt(carouselIdStr.substring(carouselIdStr.length - 1));
-            console.log(direction + ', ' + carouselIdInt);
+            console.log(currentSlide + ', ' + carouselIdInt);
             // Update moderation status
             var formIdStr = '#form-' + carouselIdInt;
             var jsonText = JSON.stringify($(formIdStr).serializeJSON());
             console.log(jsonText);
             var json = {'data': jsonText};
-            console.log(json);
+            
             $.ajax({
                 url: "writejson.php",
                 type: "POST",
@@ -118,13 +115,32 @@
 
             // Hide last photo carousel, show next photo carousel
             if (carouselIdInt < 5) {
-                $('#carousel-' + carouselIdInt).hide();
-                $('#carousel-' + (carouselIdInt + 1)).show();
+                
+                
+
+
+                var preloader = function() {
+                    $('#carousel-' + carouselIdInt).hide();
+                    iniSlick('#carousel-' + (carouselIdInt + 1));
+                    preloader.clearTimeout();
+                }
+
+                setTimeout(preloader, 2000);
+
+
             }
             else {
                 document.location = 'thanks.php';
             }
+
           });
+
+            function iniSlick(carousel){
+                $(carousel).show();
+                $(carousel).slick({
+                    initialSlide: 1
+                });                
+            }
         });
         </script>
 
