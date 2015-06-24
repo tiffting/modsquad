@@ -38,9 +38,8 @@
 
             <div class="section">
                 <?php
-                    echo '<div class="group-'.$group.'">';
                     foreach($json[photo] as $p) {
-                        if($p[group] === $group) {
+                        if(substr($p[id], 0, 1) === $group) {
                             echo '
                                 <div class="carousel-and-form">
                                     <div id="carousel-'.$p[id].'" class="carousel">
@@ -63,7 +62,6 @@
                                     </div>
                                     <form id="form-'.$p[id].'">
                                         <input type="hidden" name="photoId" value="'.$p[id].'"/>
-                                        <input type="hidden" name="photoGroup" value="'.$p[group].'"/>
                                         <input type="hidden" name="testId" value="'.$test.'"/>
                                         <input type="hidden" name="approved" value=""/>
                                     </form>
@@ -71,7 +69,6 @@
                             ';
                         }
                     }
-                    echo '</div>';
                 ?>
             </div>
 
@@ -90,9 +87,9 @@
         <script src="js/main.js"></script>
         <script>
         $(document).ready(function(){
-          iniSlick('#carousel-1');
-          $('.carousel').on('afterChange', function(event, slick, currentSlide) {            
-
+          var firstCarouselId = '#' + $('.carousel-and-form').first().find('.carousel').attr('id');
+          iniSlick(firstCarouselId);
+          $('.carousel').on('afterChange', function(event, slick, currentSlide) {
             // Rejected
             if (currentSlide === 0) {
                 $(this).siblings('form').find('input[name="approved"]').val('false');
@@ -102,8 +99,10 @@
                 $(this).siblings('form').find('input[name="approved"]').val('true');
             }
             var carouselIdStr = $(this).attr('id');
-            var carouselIdInt = parseInt(carouselIdStr.substring(carouselIdStr.length - 1));
+            // Get current photoId
+            var carouselIdInt = parseInt(carouselIdStr.substring(carouselIdStr.length - 2));
             console.log(currentSlide + ', ' + carouselIdInt);
+
             // Update moderation status
             var formIdStr = '#form-' + carouselIdInt;
             var jsonText = JSON.stringify($(formIdStr).serializeJSON());
@@ -117,53 +116,41 @@
             });
 
             // Hide last photo carousel, show next photo carousel
-            if (carouselIdInt < 5) {
-                
-                
-
-
-                var preloader = function() {
-                    $('#carousel-' + carouselIdInt).hide();
-                    $('#carousel-' + carouselIdInt).removeClass('visible-carousel');
-                    iniSlick('#carousel-' + (carouselIdInt + 1));
-                    clearTimeout(muffin);
-                }
-
-                var muffin = setTimeout(preloader, 1000);
-
-
+            if (parseInt(carouselIdStr.substring(carouselIdStr.length - 1)) < 5) {
+              var preloader = function() {
+                $('#carousel-' + carouselIdInt).hide();
+                $('#carousel-' + carouselIdInt).removeClass('visible-carousel');
+                iniSlick('#carousel-' + (carouselIdInt + 1));
+                clearTimeout(muffin);
+              }
+              var muffin = setTimeout(preloader, 1000);
             }
             else {
-
                 var thankyou = function(){
                     document.location = 'thanks.php';
                     clearTimeout(cupcake);
                 }
-
                 var cupcake = setTimeout(thankyou, 1000);
-                
             }
 
             $(window).resize(function(){
                 resizeSlides();
             });
-
           });
 
-            function iniSlick(carousel){
-                $(carousel).show();
-                $(carousel).addClass('visible-carousel');
-                $(carousel).slick({
-                    initialSlide: 1
-                }); 
+          function iniSlick(carousel){
+              $(carousel).show();
+              $(carousel).addClass('visible-carousel');
+              $(carousel).slick({
+                  initialSlide: 1
+              }); 
 
-                // make the approve / reject slides the same height
-                resizeSlides();
-            }
-
-            function resizeSlides(){
-                $('.visible-carousel').find('.preloader').height(  $('.visible-carousel').find('.main-slide').height()  );
-            }
+              // make the approve / reject slides the same height
+              resizeSlides();
+          }
+          function resizeSlides(){
+              $('.visible-carousel').find('.preloader').height(  $('.visible-carousel').find('.main-slide').height()  );
+          }
 
         });
         </script>

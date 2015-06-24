@@ -8,12 +8,10 @@
     // If no previous photo group done, start with photo group a
     $groupsDone = $_COOKIE['groups_done'];
     if (!isset($groupsDone)) {
-        setcookie('which_group', 'a');
+        setcookie('which_group', '1');
     }
     else {
-        $length = strlen($groupsDone);
-        $lastChar = substr($groupsDone, ($length - 1));
-        $currentGroup = substr($groupsDone, (strlen($groupsDone) - 1));
+        $currentGroup = substr($groupsDone, -1);
         setcookie('which_group', ++$currentGroup);
     }
 
