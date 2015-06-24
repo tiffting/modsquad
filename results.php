@@ -118,8 +118,59 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+        <script src="js/vendor/underscore-min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
-
+        <script>
+            $(document).ready(function(){
+                $.ajax({
+                    method: 'GET',
+                    url: 'data/modResponses.js',
+                    dataType: 'text',
+                    success: function(responsesRaw) {
+                        generateReport(responsesRaw);
+                    }
+                });
+            });
+            var generateReport = function(body) {
+                // Create JSON object from modResponses.js with valid JSON wrapper
+                var reTrailingComma = /,$/;
+                var validBody = body.replace(reTrailingComma, '');
+                var contentStr = '{\n\t\"responses\": [' + validBody + '\n\t]\n}';
+                var contentJson = JSON.parse(contentStr);
+                var responses = contentJson.responses;
+                // Aggregate approval per photoId+testId(current) combo
+                    // e.g., photoId: 21, testId: 3
+                    // totalResponses: 100, approvedCount: 75
+                var responsesByPhoto = _.groupBy(responses, 'photoId');
+                var responsesByPhotoArray = _.map(responsesByPhoto);
+                var photoCount = _.keys(responsesByPhoto).length;
+                var totalResponsesByPhoto = new Array(photoCount);
+                var approvedResponsesByPhoto = new Array(photoCount);
+                // Create multidimensional part to store results per test
+                var totalTests = 4;
+                for (var i = 0; i < photoCount; i++) {
+                    totalResponsesByPhoto[i] = [' ', ' ', ' ', ' '];
+                    approvedResponsesByPhoto[i] = [' ', ' ', ' ', ' '];
+                }
+                for (var i = 0; i < photoCount; i++) {
+                    var testResponses = _.map(_.groupBy(responsesByPhotoArray[i], 'testId'));
+                    for (var j = 0; j < testResponses.length; j++) {
+                        // Total responses = length of testResponses[j]
+                        totalResponsesByPhoto[i][j] = testResponses[j].length;
+                        // Approved responses = ???
+                        var yesOrNo = _.countBy(testResponses[j], function(obj) {
+                            return obj['approved'] === 'true' ? 'approved' : 'rejected'
+                        });
+                        if (yesOrNo['approved'] !== undefined) {
+                            approvedResponsesByPhoto[i][j] = yesOrNo['approved'];                        
+                        }
+                        else {
+                            approvedResponsesByPhoto[i][j] = 0;
+                        }
+                    }
+                }
+            };
+        </script>
     </body>
 </html>
