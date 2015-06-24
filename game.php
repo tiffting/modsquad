@@ -1,7 +1,8 @@
 <?php
     $photo_data = "data/photos.js";
     $json = json_decode(file_get_contents($photo_data), true);
-    $titles = array('Pass the Prude', 'You\'re Doing it Wrong', 'What a Jerk!', 'Derp.');
+    
+    include 'instructions.php';
 ?>
 <!doctype html>
 <html class="no-js" lang="">
@@ -43,7 +44,7 @@
                             echo '
                                 <div class="carousel-and-form">
                                     <div id="carousel-'.$p[id].'" class="carousel">
-                                        <div class="preloader reject"><img src="resources/img/BOO.png" alt="" /></div>
+                                        <div class="preloader approve"><img src="resources/img/OK.png" alt="" /></div>
                             ';
                             if ($test !== '2') {
                                 echo '
@@ -58,7 +59,7 @@
                                 ';
                             }
                             echo '
-                                        <div class="preloader approve"><img src="resources/img/OK.png" alt="" /></div>
+                                        <div class="preloader reject"><img src="resources/img/BOO.png" alt="" /></div>
                                     </div>
                                     <form id="form-'.$p[id].'">
                                         <input type="hidden" name="photo-id" value="'.$p[id].'"/>
@@ -74,6 +75,8 @@
                 ?>
             </div>
 
+            <?php echo $left[$test-1]; ?>
+
         </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -88,7 +91,7 @@
         <script>
         $(document).ready(function(){
           iniSlick('#carousel-1');
-          $('.carousel').on('afterChange', function(event, slick, currentSlide) {
+          $('.carousel').on('afterChange', function(event, slick, currentSlide) {            
 
             // Rejected
             if (currentSlide === 0) {
@@ -121,6 +124,7 @@
 
                 var preloader = function() {
                     $('#carousel-' + carouselIdInt).hide();
+                    $('#carousel-' + carouselIdInt).removeClass('visible-carousel');
                     iniSlick('#carousel-' + (carouselIdInt + 1));
                     clearTimeout(muffin);
                 }
@@ -130,20 +134,37 @@
 
             }
             else {
-                document.location = 'thanks.php';
+
+                var thankyou = function(){
+                    document.location = 'thanks.php';
+                    clearTimeout(cupcake);
+                }
+
+                var cupcake = setTimeout(thankyou, 1000);
+                
             }
+
+            $(window).resize(function(){
+                resizeSlides();
+            });
 
           });
 
             function iniSlick(carousel){
                 $(carousel).show();
+                $(carousel).addClass('visible-carousel');
                 $(carousel).slick({
                     initialSlide: 1
                 }); 
 
                 // make the approve / reject slides the same height
-                $(carousel).find('.preloader').height(  $(carousel).find('.main-slide').height()  );
+                resizeSlides();
             }
+
+            function resizeSlides(){
+                $('.visible-carousel').find('.preloader').height(  $('.visible-carousel').find('.main-slide').height()  );
+            }
+
         });
         </script>
 

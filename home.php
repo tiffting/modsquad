@@ -17,7 +17,7 @@
         setcookie('which_group', ++$currentGroup);
     }
 
-    $titles = array('Pass the Prude', 'You\'re Doing it Wrong', 'What a Jerk!', 'Derp.');
+    include 'instructions.php';
 ?>
 <!doctype html>
 <html class="no-js" lang="">
@@ -43,16 +43,10 @@
         <div id="test-1" class="content">
             <h1 class="section title">
                 <?php echo $titles[$test-1]; ?>
-            </h1>            
-            <div class="section instruction left">
-                <p>
-                    <strong>Swipe LEFT</strong> if the photo would <strong>make Ned Flanders uncomfortable</strong>:
-                </p>
-                <ul>
-                    <li>It has violence, nudity, or other R-rated stuff, or</li>
-                    <li>It's mean-spirited</li>
-                </ul>
-            </div>
+            </h1> 
+
+            <?php echo $left[0] ?>
+
             <div class="section instruction right">
                 <p>
                     Otherwise, <strong>Swipe RIGHT</strong>!
@@ -67,17 +61,10 @@
         <div id="test-2" class="content">
             <h1 class="section title">
                 <?php echo $titles[$test-1]; ?>
-            </h1>            
-            <div class="section instruction left">
-                <p>
-                    <strong>Swipe LEFT</strong> if the contributor <strong>didn't get the assignment</strong>:
-                </p>
-                <ul>
-                    <li>It's not in English (this is 'merica!),</li>
-                    <li>It has PII (like someone's phone number), or </li>
-                    <li>It's spam</li>
-                </ul>
-            </div>
+            </h1> 
+
+            <?php echo $left[1] ?>
+
             <div class="section instruction right">
                 <p>
                     Otherwise, <strong>Swipe RIGHT</strong>!
@@ -92,16 +79,10 @@
         <div id="test-3" class="content">
             <h1 class="section title">
                 <?php echo $titles[$test-1]; ?>
-            </h1>            
-            <div class="section instruction left">
-                <p>
-                    <strong>Swipe LEFT</strong> if the photo <strong>was taken by a jerk</strong>:
-                </p>
-                <ul>
-                    <li>It has obscene gestures or whatever, or</li>
-                    <li>It could get YETI in trouble</li>
-                </ul>
-            </div>
+            </h1> 
+
+            <?php echo $left[2] ?>
+
             <div class="section instruction right">
                 <p>
                     Otherwise, <strong>Swipe RIGHT</strong>!
@@ -116,12 +97,10 @@
         <div id="test-4" class="content">
             <h1 class="section title">
                 <?php echo $titles[$test-1]; ?>
-            </h1>            
-            <div class="section instruction left">
-                <p>
-                    <strong>Swipe LEFT</strong> if the photo <strong>is missing a YETI product</strong>.
-                </p>
-            </div>
+            </h1>    
+
+            <?php echo $left[3] ?>
+
             <div class="section instruction right">
                 <p>
                     Otherwise, <strong>Swipe RIGHT</strong>!

@@ -76,7 +76,7 @@ h2.section {margin: 0 0 .5em; padding: 0 .5em; font-size: 1em;}
 .text {
   background-color: white;
 }
-.text p {padding: 1em;}
+.text p {padding: 5em 1em; text-align: left;}
 
 .slick-slider {margin-bottom: 0;}
 .carousel img {max-width: 95%; margin: 5px auto;}
@@ -86,3 +86,21 @@ h2.section {margin: 0 0 .5em; padding: 0 .5em; font-size: 1em;}
 .preloader img {visibility: hidden;}
 .approve {background-image: url('background/OK.png');}
 .reject {background-image: url('background/BOO.png');}
+
+.slick-prev, .slick-next {
+	position: absolute;
+	display: block; width: 5em; height: 5em;
+	text-indent: -10em; overflow: hidden;
+	background: transparent no-repeat 50% 50%;
+	background-size: 100%;
+	border: none; outline: none;
+	top: 50%; margin-top: -2.5em;
+}
+.slick-prev {
+		background-image: url('background/little-OK.png');
+		right: -2.5em;
+}
+.slick-next {
+		background-image: url('background/little-BOO.png');
+		left: -2.5em;
+}
