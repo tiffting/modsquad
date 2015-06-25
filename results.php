@@ -30,6 +30,7 @@
                     <li>
                         <small>Approved</small>
                         <h2 class="approved"></h2> 
+
                     </li>
                </ol>
             </div>

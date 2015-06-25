@@ -55,8 +55,10 @@
                 Pass the Prude
             </h1>            
             <div class="section report">
-                <p>
-                    Great job! [Graph goes here]
+                <p id="#score" class="score">
+                    You scored <br />
+                    <strong class="number">82</strong><br />
+                    <span class="number">82</span>% of peeps voted like you did.                           
                 </p>
             </div>
 
@@ -77,8 +79,10 @@
                 You're Doing it Wrong
             </h1>            
             <div class="section report">
-                <p>
-                    Great job! [Graph goes here]
+                <p id="#score" class="score">
+                    You scored <br />
+                    <strong class="number">82</strong><br />
+                    <span class="number">82</span>% of peeps voted like you did.                           
                 </p>
             </div>
 
@@ -99,8 +103,10 @@
                 What a jerk!
             </h1>            
             <div class="section report">
-                <p>
-                    Great job! [Graph goes here]
+                <p id="#score" class="score">
+                    You scored <br />
+                    <strong class="number">82</strong><br />
+                    <span class="number">82</span>% of peeps voted like you did.                           
                 </p>
             </div>
 
@@ -121,8 +127,10 @@
                 Derp.
             </h1>            
             <div class="section report">
-                <p>
-                    Great job! [Graph goes here]
+                <p id="#score" class="score">
+                    You scored <br />
+                    <strong class="number">82</strong><br />
+                    <span class="number">82</span>% of peeps voted like you did.                           
                 </p>
             </div>
 
@@ -142,6 +150,17 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                
+                $('.score').each(function(){
+                    var number = Math.floor( Math.random() * (100 - 50) + 50 );
+                    $(this).find('.number').text(number);
+                });
+
+            });
+        </script>
 
     </body>
 </html>
