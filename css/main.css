@@ -3,7 +3,7 @@ img {max-width: 100%;}
 ol {margin: 0; padding: 0; list-style-type: none;}
 
 .inside {padding: .5em;}
-.title {
+.title, #links a {
 	-ms-transform: rotate(-2deg); /* IE 9 */
   -webkit-transform: rotate(-2deg); /* Chrome, Safari, Opera */
   transform: rotate(-2deg);
@@ -71,25 +71,25 @@ h2.section {margin: 0 0 .5em; padding: 0 .5em; font-size: 1em;}
 }
 
 .test-1 .content {background: url('background/mixed-tape.png');}
-.test-1 .section {background-color: palegreen;}
+.test-1 .section, #links .test-1 a {background-color: palegreen;}
 
 .test-2 .content {background: url('background/dinosaur.png');}
 .test-2 .title {text-shadow: 2px 2px 0 lawngreen, -2px -2px 0 lawngreen, 2px -2px 0 lawngreen, -2px 2px 0 lawngreen;}
-.test-2 .section {background-color: powderblue;}
+.test-2 .section, #links .test-2 a {background-color: powderblue;}
 .test-2 .action a {color: lawngreen;}
 .test-2 .right:after {border-left-color: powderblue;}
 .test-2 .left:before {border-right-color: powderblue;}
 
 .test-3 .content {background: url('background/dolphin.png');}
 .test-3 .title {text-shadow: 2px 2px 0 cyan, -2px -2px 0 cyan, 2px -2px 0 cyan, -2px 2px 0 cyan;}
-.test-3 .section {background-color: pink;}
+.test-3 .section, #links .test-3 a {background-color: pink;}
 .test-3 .action a {color: cyan;}
 .test-3 .right:after {border-left-color: pink;}
 .test-3 .left:before {border-right-color: pink;}
 
 .test-4 .content {background: url('background/nigel.png');}
 .test-4 .title {text-shadow: 2px 2px 0 aquamarine, -2px -2px 0 aquamarine, 2px -2px 0 aquamarine, -2px 2px 0 aquamarine;}
-.test-4 .section {background-color: gold;}
+.test-4 .section, #links .test-4 a {background-color: gold;}
 .test-4 .action a {color: aquamarine;}
 .test-4 .right:after {border-left-color: gold;}
 .test-4 .left:before {border-right-color: gold;}
@@ -139,11 +139,14 @@ h2.section {margin: 0 0 .5em; padding: 0 .5em; font-size: 1em;}
 #links .link {
   margin-bottom: 1em;
 }
-#links .title {
-  font-size: 1.7em;
-  word-break: break-all;
+#links h1 {
+  font-size: 1.55em;
+  margin-bottom: 0;
+  text-align: center;
 }
-#links .title a {
+#links a {
+  display: block;
+  padding: 0.5em;
   text-decoration: none;
 }
 
