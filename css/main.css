@@ -32,7 +32,7 @@ h2.approved {color: cadetblue;}
 .approved .percentage {background-color: cadetblue; border-color: cadetblue;}
 
 .tally {text-align: center;}
-.tally li {display: inline-block; width: 5em; padding: 1em; margin: 1em; background-color: aliceblue; border: 1px solid lightsteelblue; border-radius: .5em;}
+.tally li {display: inline-block; width: 4.5em; padding: 1em; margin: 1em; background-color: aliceblue; border: 1px solid lightsteelblue; border-radius: .5em;}
 .tally h2 {margin: 0; font-size: 4em;}
 .tally small {text-transform: uppercase;}
 
