@@ -23,6 +23,7 @@ figcaption {font-size: .8em;}
 .col {float: left;}
 .col-narrow {width: 50%;}
 .col-wide {width: 50%}
+h2.rejected,h2.approved {text-transform: capitalize;}
 h2.rejected {color: orangered;}
 h2.approved {color: cadetblue;}
 .bar {position: relative; max-width: 30em; height: 2em; margin-bottom: 1em;}
@@ -126,6 +127,10 @@ h2.section {margin: 0 0 .5em; padding: 0 .5em; font-size: 1em;}
 .slick-next {
 		background-image: url('background/little-BOO.png');
 		left: -2.5em;
+}
+
+#photo-template {
+  display: none;
 }
 
 @media only screen and (min-width: 35em) {

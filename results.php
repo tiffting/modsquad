@@ -34,58 +34,22 @@
                </ol>
             </div>
 
-            <div class="section clearfix">
-                <div class="col col-narrow">
-                    <div class="inside">
-                        <figure>
-                            <img src="data/photos/photo-1.jpg" alt="" />
-                            <figcaption>
-                                <p>
-                                    Got Rick Ross a new badass Yeti for Father's Day!! #ImHisFavoriteChild #Yeti #YetiCoolers
-                                </p>
-                                <p>
-                                    <strong>By:</strong> bossross143
-                                </p>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
-                <div class="col col-wide">
-                    <div class="inside">
-                        <h2 class="rejected">Rejected</h2>
-                        <ol>
-                            <li class="bar rejected">
-                                <div></div>
-                                <div class="percentage" style="width: 40%"></div>                            
-                            </li>
-                            <li class="bar approved">
-                                <div></div>
-                                <div class="percentage" style="width: 100%"></div>                            
-                            </li>
-                            <li class="bar approved">
-                                <div></div>
-                                <div class="percentage" style="width: 70%"></div>                            
-                            </li>
-                            <li class="bar approved">
-                                <div></div>
-                                <div class="percentage" style="width: 80%"></div>                            
-                            </li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
+            <!-- Insert templates here via JS -->
 
+        </div>
+
+        <div id="photo-template">
             <div class="section clearfix">
                 <div class="col col-narrow">
                     <div class="inside">
                         <figure>
-                            <img src="data/photos/photo-11.jpg" alt="" />
+                            <img src="" alt="" />
                             <figcaption>
                                 <p>
-                                    Adventures #yeticoolers #builtforthewild @yeticoolers instagram.com/p/3URYV6AJGe/
+                                    <span class="comment">SOMETHING_COMMENTY</span>
                                 </p>
                                 <p>
-                                    <strong>By:</strong> Ryan Crook @CrookArmy
+                                    <strong>By:</strong> <span class="nickname">SOMETHING_NICKNAMEY</span>
                                 </p>
                             </figcaption>
                         </figure>
@@ -93,23 +57,23 @@
                 </div>
                 <div class="col col-wide">
                     <div class="inside">
-                        <h2 class="approved">Approved</h2>
+                        <h2 class="SOMETHING_STATUSY">SOMETHING_STATUSY</h2>
                         <ol>
-                            <li class="bar approved">
+                            <li class="bar SOMETHING_STATUSY">
                                 <div></div>
-                                <div class="percentage" style="width: 80%"></div>                            
+                                <div class="percentage" style="width: SOMETHING_PERCENT_APPROVEDY"></div>                            
                             </li>
-                            <li class="bar approved">
+                            <li class="bar SOMETHING_STATUSY">
                                 <div></div>
-                                <div class="percentage" style="width: 100%"></div>                            
+                                <div class="percentage" style="width: SOMETHING_PERCENT_APPROVEDY"></div>                            
                             </li>
-                            <li class="bar approved">
+                            <li class="bar SOMETHING_STATUSY">
                                 <div></div>
-                                <div class="percentage" style="width: 70%"></div>                            
+                                <div class="percentage" style="width: SOMETHING_PERCENT_APPROVEDY"></div>                            
                             </li>
-                            <li class="bar approved">
+                            <li class="bar SOMETHING_STATUSY">
                                 <div></div>
-                                <div class="percentage" style="width: 80%"></div>                            
+                                <div class="percentage" style="width: SOMETHING_PERCENT_APPROVEDY"></div>                            
                             </li>
                         </ol>
                     </div>
@@ -134,6 +98,9 @@
                 });
             });
             var generateReport = function(body) {
+                // Variablize DOM elements
+                var $results = $('.results');
+                var $photoTemplate = $('#photo-template').children();
                 // Create JSON object from modResponses.js with valid JSON wrapper
                 var reTrailingComma = /,$/;
                 var validBody = body.replace(reTrailingComma, '');
@@ -153,8 +120,12 @@
                 for (var i = 0; i < photoCount; i++) {
                     totalResponsesByPhoto[i] = [' ', ' ', ' ', ' '];
                     approvedResponsesByPhoto[i] = [' ', ' ', ' ', ' '];
-                }
-                for (var i = 0; i < photoCount; i++) {
+                    $results.append($photoTemplate).html();
+                    var $thisPhoto = $results.find('.section.clearfix').eq(i);
+                    $thisPhoto.find('img').attr('src', 'data/photos/photo-' + responsesByPhotoArray[0][0].photoId + '.jpg');
+                    // TODO: need to read photos.js for the comment and nickname, ideally for the photo src, too (above).
+                    // $thisPhoto.find('.comment').
+                    // debugger
                     var testResponses = _.map(_.groupBy(responsesByPhotoArray[i], 'testId'));
                     for (var j = 0; j < testResponses.length; j++) {
                         // Total responses = length of testResponses[j]
@@ -171,6 +142,11 @@
                         }
                     }
                 }
+                console.log('approved responses');
+                console.log(approvedResponsesByPhoto);
+                console.log('==================');
+                console.log('total responses');
+                console.log(totalResponsesByPhoto);
             };
         </script>
     </body>
