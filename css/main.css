@@ -140,6 +140,12 @@ h2.section {margin: 0 0 .5em; padding: 0 .5em; font-size: 1em;}
   font-size: 1.54em;
   word-break: break-all;
 }
+#links .title a {
+  text-decoration: none;
+}
+
+#intro .content {max-width: inherit;}
+#intro .large {display: none;}
 
 @media only screen and (min-width: 35em) {
     body {padding-top: 4em;}
@@ -154,4 +160,13 @@ h2.section {margin: 0 0 .5em; padding: 0 .5em; font-size: 1em;}
   .test-4 {
     padding-right: 0;
   }
+
+  #intro {padding-top: 1em;}
+  #intro .small {display: none;}
+  #intro .large {display: inline;}
+  #intro .title {
+    -ms-transform: rotate(-1deg);
+    -webkit-transform: rotate(-1deg);
+    transform: rotate(-1deg);
+  };
 }
