@@ -136,6 +136,17 @@ h2.section {margin: 0 0 .5em; padding: 0 .5em; font-size: 1em;}
   display: none;
 }
 
+#links .title {
+  font-size: 1.54em;
+}
+.link {
+  float: left;
+  padding-right: 1em;
+}
+.test-4 {
+  padding-right: 0;
+}
+
 @media only screen and (min-width: 35em) {
     body {padding-top: 4em;}
     .instruction {margin: 1em 3em;}
