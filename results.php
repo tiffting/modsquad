@@ -153,7 +153,7 @@
                         approvalRating[j] = approvedResponsesByPhoto[i][j] / totalResponsesByPhoto[i][j];
                         $thisPhoto.find('ol').append(graphTemplate);
                         var $thisTest = $thisPhoto.find('li').eq(j);
-                        if (approvalRating[j] > 0.5) {
+                        if (approvalRating[j] > 0.75) {
                             $thisTest.addClass(strApproved);
                         }
                         else {

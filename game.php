@@ -79,10 +79,7 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
         <script src="js/vendor/jquery.serializejson.js"></script>
-        <?php
-            // tiff TODO: Change this to slick.min.js
-        ?>
-        <script src="js/vendor/slick.js"></script>
+        <script src="js/vendor/slick.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
         <script>
@@ -90,12 +87,13 @@
           var firstCarouselId = '#' + $('.carousel-and-form').first().find('.carousel').attr('id');
           iniSlick(firstCarouselId);
           $('.carousel').on('afterChange', function(event, slick, currentSlide) {
+            debugger
             // Rejected
-            if (currentSlide === 0) {
+            if (currentSlide === 2) {
                 $(this).siblings('form').find('input[name="approved"]').val('false');
             }
             // Approved
-            else if (currentSlide === 2) {
+            else if (currentSlide === 0) {
                 $(this).siblings('form').find('input[name="approved"]').val('true');
             }
             var carouselIdStr = $(this).attr('id');
