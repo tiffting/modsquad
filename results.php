@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html class="no-js" lang="">
     <head>
@@ -20,6 +19,9 @@
         <body style="padding: 0;">
         
         <div class="results">
+            <div class="test-1">
+                <h1 class="section title">http://bit.ly/bv-modsquad-results</h1>
+            </div>
 
             <div class="section">
                <ol class="tally">
