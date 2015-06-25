@@ -136,8 +136,11 @@ h2.section {margin: 0 0 .5em; padding: 0 .5em; font-size: 1em;}
   display: none;
 }
 
+#links .link {
+  margin-bottom: 1em;
+}
 #links .title {
-  font-size: 1.54em;
+  font-size: 1.7em;
   word-break: break-all;
 }
 #links .title a {
@@ -155,10 +158,7 @@ h2.section {margin: 0 0 .5em; padding: 0 .5em; font-size: 1em;}
 	.inside {padding: 1em;}
   .link {
     float: left;
-    padding-right: 1em;
-  }
-  .test-4 {
-    padding-right: 0;
+    padding-left: 3em;
   }
 
   #intro {padding-top: 1em;}
